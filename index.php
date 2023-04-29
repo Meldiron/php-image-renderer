@@ -43,7 +43,7 @@ $getNameDay = function() use ($date) {
 
 $name = $getNameDay();
 
-$image = new Imagick('bg.png');
+$image = new Imagick($dayVerbose === '26.07.' ? 'bg-celebrate.png' : 'bg.png');
 
 if(!empty($name)) {
     $draw = new ImagickDraw();

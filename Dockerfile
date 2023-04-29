@@ -18,11 +18,12 @@ RUN apt-get update && apt-get install -y \
 
 # Source
 COPY ./ /var/www/html/
-COPY ./fonts /var/www/html/fonts/
 RUN chmod -R 777 /var/www/html
 
 # Dependencies
 RUN composer install --no-dev --profile --ignore-platform-reqs
+
+EXPOSE 80
 
 # Startup
 CMD ["apache2-foreground"]
